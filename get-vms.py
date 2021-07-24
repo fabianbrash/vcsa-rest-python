@@ -5,10 +5,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 from operator import length_hint
+from dotenv import load_dotenv
+import os
 
-vc_name = 'vc'
-vc_user = 'user'
-vc_pass = 'pass'
+load_dotenv()
+
+vc_name = os.environ.get('VCENTER')
+vc_user = os.environ.get('VC_USER')
+vc_pass = os.environ.get('VC_PASS')
 
 s=requests.Session()
 s.verify=False
