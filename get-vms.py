@@ -46,11 +46,13 @@ def return_vms():
 # Lets get our token
 
 def get_vc_session(vc_name,vc_user,vc_pass):
-    s.post('https://'+vc_name+'/rest/com/vmware/cis/session',auth=(vc_user,vc_pass))
+    #s.post('https://'+vc_name+'/rest/com/vmware/cis/session',auth=(vc_user,vc_pass))
+    s.post(f'https://{vc_name}/rest/com/vmware/cis/session',auth=(vc_user,vc_pass))
     return s
 
 def get_vms(vc_name):
-    vms=s.get('https://'+vc_name+'/rest/vcenter/vm')
+    #vms=s.get('https://'+vc_name+'/rest/vcenter/vm')
+    vms=s.get(f'https://{vc_name}/rest/vcenter/vm')
     return vms
 
 #get_vc_session(vc_name,vc_user,vc_pass)
