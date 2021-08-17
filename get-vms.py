@@ -10,6 +10,7 @@ import os
 
 load_dotenv()
 
+# Note in the root of your directory you need a .env file with the below environment variables
 vc_name = os.environ.get('VCENTER')
 vc_user = os.environ.get('VC_USER')
 vc_pass = os.environ.get('VC_PASS')
